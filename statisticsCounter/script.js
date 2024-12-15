@@ -8,7 +8,6 @@ customElements.define('new-ach',class extends HTMLElement{
                             </div>
                         </div>`
         this.setAttribute('class','col m-3')
-        this.setAttribute("value","0")
     }
 })
 // counter's interval :
@@ -16,26 +15,26 @@ function counter(id) {
     let value = Number($(id).text())+1
     let i = 0 
     let count
-    console.log(5000/value)
+    $(id).text(`${i}`)
     count = setInterval(() => {
             $(id).text(`${i}`)
             i++
-        },30)
+        },50)
     setTimeout(() => {
         clearInterval(count)
-    },value*30);
+    },value*50);
 }
 // running the counters when the page be ready :
 $("document").ready(
     function(){
-        $(".status").toggle()
-        $(".status").toggle(3000,
-            function(){
-                counter('#students')
-                counter('#courses')
-                counter('#lectures')
-                counter('#consulting')
-            }
-        )
+        // statistics
+        $('.status').toggle()
+        $('.status').slideDown(1000)
+        // counters
+        counter('#students')
+        counter('#courses')
+        counter('#lectures')
+        counter('#consulting')
+       
     }
 )
