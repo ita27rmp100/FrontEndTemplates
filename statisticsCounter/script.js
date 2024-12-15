@@ -3,7 +3,7 @@ customElements.define('new-ach',class extends HTMLElement{
     connectedCallback(){
         this.innerHTML=`<div class="card bg-transparent text-light stCard">
                             <div class="card-body">
-                            <h3  id=${this.getAttribute('idCild')} >${this.getAttribute('value')}</h3>
+                            <h3  id=${this.getAttribute('idCild')} >${this.getAttribute('value')} </h3>
                             <h6>${this.getAttribute('of')}</h6>
                             </div>
                         </div>`
@@ -12,17 +12,29 @@ customElements.define('new-ach',class extends HTMLElement{
 })
 // counter's interval :
 function counter(id) {
-    let value = Number($(id).text())+1
-    let i = 0 
+    let value = Number($(id).text())
+    let i = 1
     let count
-    $(id).text(`${i}`)
+    if (value<1000) {
+        $(id).text(`${i}`)
+    }
+    else{
+        let carry = (value)%100
+        $(id).text(`${carry}`)
+    }
     count = setInterval(() => {
-            $(id).text(`${i}`)
-            i++
-        },50)
-    setTimeout(() => {
-        clearInterval(count)
-    },value*50);
+            if(i<=value){
+                $(id).text(`${i}`)
+                if (value<1000) {
+                    i++
+                }
+                else{
+                    i += 10
+                }
+            }else{
+                clearInterval(count)
+            }
+        },3000/value)
 }
 // running the counters when the page be ready :
 $("document").ready(
