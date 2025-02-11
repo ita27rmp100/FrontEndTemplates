@@ -9,24 +9,7 @@ body{
 .navbar{
     margin:0px;
 }
-.headForms{
-    gap:5px;
-}
-/* messages list's field */
-.chat{
-    display:grid;
-    grid-template-rows: auto 55px;
-    height: 90vh;
-}
-.msgs{
-    height: 100%;
-}
-.new{
-    position: relative;
-    bottom: 5px;
-}
-/* login/signup page */
-    /* both setting */
+/* login/signup part */
 .content{
     max-width:500px;
 }
