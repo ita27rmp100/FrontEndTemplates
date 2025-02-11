@@ -16,13 +16,9 @@ function toogleMood(){
     indexMode = Math.abs(indexMode-1)
 }
 htmlForm()
-// before loading he page
-if((document.title).includes("chating") == false){
-    $(".headForms").remove()
-}
 // edit on navbar according to title
 $(document).ready(
     function(){
-        $("label").addClass("btn p-3 active col-6")
+        $("label").addClass("btn p-3 col-6")
     }
 )
