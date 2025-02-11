@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SendAnony | home</title>
+        <!-- link files and documents -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="icon" href="/images/SendAnony.png">  -->
+    </head>
+<body>
+    <!-- The navbar -->
+    <nav class="navbar navbar-light bg-light d-flex row justify-content-around overflow-hidden">
+        <section class="navbar-brand mb-0 h1">Chat Anonymous</section>
+        <div class="d-flex row headForms">
+            <form action="/">
+                <input type="submit" value="New Chat" class="btn btn-outline-success">
+            </form>
+            <form action="/">
+                <input type="submit" value="Log out" class="btn btn-danger">
+            </form>
+        </div>
+    </nav>
+    <nav class="container content d-flex flex-column align-items-center p-3">
+        <!-- where one of them appear -->
+        <div class="p-2">
+            <!-- Log in -->
+            <div class="container position-relative" style="top:30px">
+                <div class="row justify-content-center align-items-center text-center">
+                    <form class="card bg-light shadow" action="/sign-up" method="post">
+                        <div class="card-head">
+                            <div class="btn-group btn-group-toggle w-100 justify-content-center" data-toggle="buttons">
+                                <label class="btn-outline-dark" id="login" onclick="toogleMood()">Log in</label>
+                                <label class="btn-light" id="signup" onclick="toogleMood()">Sign up</label>
+                            </div>
+                        </div>
+                        <!-- log-in -->
+                        <div class="card-body p-4 log">
+                            <div class="input-group mb-3">
+                                <div class="input-group-append InputTitle">
+                                    <span class="input-group-text" id="basic-addon2">Username</span>
+                                  </div>
+                                <input type="text" name="username" class="form-control"aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend InputTitle">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                                </div>
+                                <input type="password" name="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <small class="text-muted text-right">You have not an account ? <a onclick="toogleMood()" href="#">sign up</a></small>
+                        </div>
+                        <div class="card-footer justify-content-center log">
+                            <input type="submit" value="Log in" class="btn btn-success text-light">
+                        </div>
+                        <!--sign-up-->
+                        <div class="card-body sign">
+                            <div class="input-group mb-3">
+                                <div class="input-group-append InputTitle">
+                                    <span class="input-group-text" id="basic-addon2">Username</span>
+                                  </div>
+                                <input type="text" name="username" class="form-control InputTitle" required aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend InputTitle">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                                </div>
+                                <input id="pw" type="password" minlength="6" name="password" class="form-control InputTitle" aria-label="Default" aria-describedby="inputGroup-sizing-default" data-toggle="tooltip" data-placement="bottom" data-original-title="password should contain more than 6 words" required>
+                            </div>
+                            <div class="input-group mb-1">
+                                <div class="input-group-prepend InputTitle">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Confirm &nbsp;</span>
+                                </div>
+                                <input type="password" id="cpw" minlength="6" name="ConfirmPassword" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                            </div>
+                            <small class="text-muted text-right">You already have an account ? <a  onclick="toogleMood()" href="#">Log in</a></small>
+                        </div>
+                        <div class="card-footer justify-content-center sign">
+                            <input type="submit" id="btnSubmit" value="sign up" class="btn btn-success text-light">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </nav>
+    <!-- scripts -->
+     <!-- scrtipts -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

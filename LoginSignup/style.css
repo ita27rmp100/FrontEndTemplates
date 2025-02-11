@@ -1,0 +1,32 @@
+/* general styles */
+body{
+    margin:0px
+}
+*{
+    transition: all 500ms;
+}
+/* the navbar */
+.navbar{
+    margin:0px;
+}
+.headForms{
+    gap:5px;
+}
+/* messages list's field */
+.chat{
+    display:grid;
+    grid-template-rows: auto 55px;
+    height: 90vh;
+}
+.msgs{
+    height: 100%;
+}
+.new{
+    position: relative;
+    bottom: 5px;
+}
+/* login/signup page */
+    /* both setting */
+.content{
+    max-width:500px;
+}
